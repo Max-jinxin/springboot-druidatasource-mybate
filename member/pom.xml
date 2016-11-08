@@ -60,6 +60,12 @@
 			<version>3.20.0-GA</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- mybatis 分页插件  -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.6</version>
+		</dependency>
 	</dependencies>
 
 	<properties>
