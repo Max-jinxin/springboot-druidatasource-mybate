@@ -15,15 +15,9 @@ $(function(){
 	
 	// 文件切换信息显示隐藏
 	$('.file h3').click(function(){
-		$('.file ul').toggle();
+		$(this).next("ul").toggle();
 	})
 
-	// 侧导航切换内容
-	$('.leftBottom ul li').click(function(){
-
-		var index = $(this).index();
-		$('.list').removeClass('act');
-		$('.list').eq(index).addClass('act');
-	})
+	
 
 })

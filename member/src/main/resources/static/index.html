@@ -1,191 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>首页</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/style.js"></script>
+<meta charset="UTF-8">
+<title>首页</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/style.js"></script>
+<script src="js/mapping.js"></script>
+<script src="js/user/common_login_check.js"></script>
+<script src="js/welcome/index.js"></script>
+
 </head>
 <body>
-<!--头部样式开始-->
-<div id="header">
-    <h1>
-        <img src="img/logo.jpg" alt="客服工作台">
-    </h1>
-    <div class="user_welcome">
-        <em><span>欢迎您，....</span></em>
-    </div>
-    <div class="nav" id="main-toolbar">
-        <ul>
-            <li><a href="#sys_home"><img src="img/icon1.png" alt="首页">首页</a></li>
-            <li><a href="#sys_tool" class="tool_dropdown"><img src="img/icon2.png" alt="工具">工具</a></li>
-            <li><a href="#sys_personnel" class="tool_dropdown"><img src="img/icon3.png" alt="个性设置">个性设置</a></li>
-            <li class="last_li"><a href="#sys_logout"><img src="img/icon4.png" alt="退出">退出</a></li>
-        </ul>
-    </div>
-</div>
-<!--头部样式结束-->
-<!--导航样式开始-->
-<div class="mainNav">
-    <ul>
-        <li><a href="">用户信息查询</a></li>
-        <li><a href="">普通事件</a></li>
-        <li><a href="">事件查询</a></li>
-        <li><a href="">客服平台</a></li>
-        <li><a href="">信息维护</a></li>
-    </ul>
-</div>
-<!--导航样式结束-->
-<!-- 主要内容部分开始 -->
-<div class="main">
-<!-- 左侧内容样式开始 -->
-    <div class="left">
-        <div class="leftTop">
-            <ul>
-                <li class='list act'>
-                    <h2>用户信息</h2>
-                    <ul class='topCont'>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li class='file'>
-                            <h3><span class='jiantou'></span><em></em>来访预警</h3>
-                            <ul>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                            </ul>
-                        </li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                    </ul>
-                </li>
-                <li class='list'>
-                    <h2>知识管理系统</h2>
-                    <ul class='topCont'>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li class='file'>
-                            <h3><span class='jiantou'></span><em></em>来访预警</h3>
-                            <ul>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                            </ul>
-                        </li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                    </ul>
-                </li>
-                <li class='list'>
-                    <h2>风投管理系统</h2>
-                    <ul class='topCont'>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li class='file'>
-                            <h3><span class='jiantou'></span><em></em>来访预警</h3>
-                            <ul>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                            </ul>
-                        </li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                    </ul>
-                </li>
-                <li class='list'>
-                    <h2>事件递交系统</h2>
-                    <ul class='topCont'>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li class='file'>
-                            <h3><span class='jiantou'></span><em></em>来访预警</h3>
-                            <ul>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                            </ul>
-                        </li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                    </ul>
-                </li>
-                <li class='list'>
-                    <h2>个人中心</h2>
-                    <ul class='topCont'>
-                        <li><span></span><a href="submit.html">个人信息</a></li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                        <li class='file'>
-                            <h3><span class='jiantou'></span><em></em>来访预警</h3>
-                            <ul>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                                <li><span></span><a href="">用户信息查询</a></li>
-                            </ul>
-                        </li>
-                        <li><span></span><a href="">用户信息查询</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="leftBottom">
-            <ul>
-                <li><a href="">用户信息查询</a></li>
-                <li><a href="">知识管理系统</a></li>
-                <li><a href="">风控管理系统</a></li>
-                <li><a href="">事件递交系统</a></li>
-                <li><a href="">个人中心</a></li>
-                <li class="more"><a href="">更多 》</a></li>
-            </ul>
-        </div>
-    </div>
-<!-- 左侧内容样式结束 -->
-<!-- 右侧内容样式开始 -->
-<div class="right">
-    <div class="rightMain">
-        <div class='mainHeader'>
-            <h2>知识库（更多。。。）</h2>
-            <div class="seach">
-                <input type="text" placeholder='请输入知识关键字'/>
-                <button class='seachBtn'></button>
-            </div>
-        </div>
-        <div class="mainCont">
-            <table>
-                <thead>
-                    <tr>
-                        <th>标题</th>
-                        <th style='width:25%'>项目名称</th>
-                        <th style='width:20%'>时间</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="">你电风扇的开发商的烦恼水电费看电视的人非人</a></td>
-                        <td>的非的郭德纲</td>
-                        <td>12:31</td>
-                    </tr>
-                    <tr>
-                        <td><a href="">你电风扇的开发商的烦恼水电费看电视的人非人</a></td>
-                        <td>的非的郭德纲</td>
-                        <td>12:31</td>
-                    </tr>
-                    <tr>
-                        <td><a href="">你电风扇的开发商的烦恼水电费看电视的人非人</a></td>
-                        <td>的非的郭德纲</td>
-                        <td>12:31</td>
-                    </tr>
-                    <tr>
-                        <td><a href="">你电风扇的开发商的烦恼水电费看电视的人非人</a></td>
-                        <td>的非的郭德纲</td>
-                        <td>12:31</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<!-- 右侧内容样式结束 -->
-</div>
-
-
+	<!--头部样式开始-->
+	<div id="header">
+		<h1>
+			<img src="img/logo.jpg" alt="客服工作台">
+		</h1>
+		<div class="user_welcome">
+			<em><span>欢迎您，<label id="email"></label></span></em>
+		</div>
+		<div class="nav" id="main-toolbar">
+			<ul>
+				<li><a href="javascript:void(0);"><img src="img/icon1.png" alt="首页">首页</a></li>
+				<li><a href="javascript:void(0);" class="tool_dropdown"><img
+						src="img/icon2.png" alt="工具">工具</a></li>
+				<li><a href="javascript:void(0);" class="tool_dropdown"><img
+						src="img/icon3.png" alt="个性设置">个性设置</a></li>
+				<li class="last_li"><a href="javascript:void(0);" id="logout"><img
+						src="img/icon4.png" alt="退出">退出</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--头部样式结束-->
+	<!-- 主要内容部分开始 -->
+	<div class="main">
+		<!-- 左侧内容样式开始 -->
+		<div class="left">
+			<div class="leftTop">
+				<ul>
+					<li class='list act'>
+						<h2>系统管理台</h2>
+						<ul class='topCont'>
+							<!-- <li><span></span><a href="">用户信息查询</a></li>
+                        <li><span></span><a href="">用户信息查询</a></li> -->
+							<li class='file'>
+								<h3>
+									<span class='jiantou'></span><em></em>个人事件
+								</h3>
+								<ul>
+									<li><span></span><a href="#/select_personal_event">个人事件查询</a></li>
+									<li><span></span><a href="#/add_event">个人事件添加</a></li>
+									<li><span></span><a href="#/update_event">个人事件修改</a></li>
+								</ul>
+							</li>
+							<li class='file'>
+								<h3>
+									<span class='jiantou'></span><em></em>车库信息
+								</h3>
+								<ul>
+									<li><span></span><a href="#">车位查询</a></li>
+									<li><span></span><a href="#">车位管理</a></li>
+									<li><span></span><a href="">车辆管理</a></li>
+								</ul>
+							</li>
+							<li><span></span><a href="">用户信息查询</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 左侧内容样式结束 -->
+		<!-- 右侧内容样式开始 -->
+		<div class="right">
+			<div class="rightMain">
+				<div class='mainHeader'>
+					<h2>知识库（更多 > >）</h2>
+					<div class="seach">
+						<input type="text" placeholder='请输入知识关键字' />
+						<button class='seachBtn'></button>
+					</div>
+				</div>
+				<div class="mainCont" ng-view>
+					
+				</div>
+			</div>
+		</div>
+		<!-- 右侧内容样式结束 -->
+	</div>
+	
+	
 </body>
 </html>
