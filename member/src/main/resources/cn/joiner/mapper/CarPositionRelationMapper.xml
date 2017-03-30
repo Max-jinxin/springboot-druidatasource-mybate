@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.joiner.mapper.CarPositionRelationMapper" >
+  <resultMap id="BaseResultMap" type="cn.joiner.domain.CarPositionRelation" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="position_id" property="positionId" jdbcType="INTEGER" />
+    <result column="car_id" property="carId" jdbcType="INTEGER" />
+    <result column="start_date" property="startDate" jdbcType="DATE" />
+    <result column="end_date" property="endDate" jdbcType="DATE" />
+    <result column="remain_days" property="remainDays" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, position_id, car_id, start_date, end_date, remain_days, status, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_car_position_relation
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_car_position_relation
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.joiner.domain.CarPositionRelation" >
+    insert into t_car_position_relation (id, position_id, car_id, 
+      start_date, end_date, remain_days, 
+      status, create_time, update_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{positionId,jdbcType=INTEGER}, #{carId,jdbcType=INTEGER}, 
+      #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, #{remainDays,jdbcType=INTEGER}, 
+      #{status,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+	  <insert id="insertSelective" parameterType="cn.joiner.domain.CarPositionRelation" useGeneratedKeys="true" keyProperty="id">
+    insert into t_car_position_relation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+        id,
+      <if test="positionId != null" >
+        position_id,
+      </if>
+      <if test="carId != null" >
+        car_id,
+      </if>
+      <if test="startDate != null" >
+        start_date,
+      </if>
+      <if test="endDate != null" >
+        end_date,
+      </if>
+      <if test="remainDays != null" >
+        remain_days,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+        create_time,
+        update_time
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+        #{id,jdbcType=INTEGER},
+      <if test="positionId != null" >
+        #{positionId,jdbcType=INTEGER},
+      </if>
+      <if test="carId != null" >
+        #{carId,jdbcType=INTEGER},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="remainDays != null" >
+        #{remainDays,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+      NOW(),
+      NOW()
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.joiner.domain.CarPositionRelation" >
+    update t_car_position_relation
+    <set >
+      <if test="positionId != null" >
+        position_id = #{positionId,jdbcType=INTEGER},
+      </if>
+      <if test="carId != null" >
+        car_id = #{carId,jdbcType=INTEGER},
+      </if>
+      <if test="startDate != null" >
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null" >
+        end_date = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="remainDays != null" >
+        remain_days = #{remainDays,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.joiner.domain.CarPositionRelation" >
+    update t_car_position_relation
+    set position_id = #{positionId,jdbcType=INTEGER},
+      car_id = #{carId,jdbcType=INTEGER},
+      start_date = #{startDate,jdbcType=DATE},
+      end_date = #{endDate,jdbcType=DATE},
+      remain_days = #{remainDays,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <!-- 更新正常状态的remain_days 字段，根据时间计算出来 -->
+  <update id="updateRemainDays">
+  	update t_car_position_relation t set t.remain_days= TIMESTAMPDIFF(DAY,DATE_FORMAT(NOW(),'%Y-%m-%d'),t.end_date)
+where t.status=1
+  </update>
+</mapper>

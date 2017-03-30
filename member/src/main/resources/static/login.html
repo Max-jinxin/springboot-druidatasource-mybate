@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>登录</title>
+   <link rel="stylesheet" href="css/user/login.css">
+   <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101378648" data-redirecturi="http://jemotest.315wj.com/mje/qqlogincallback.jsp" charset="utf-8"></script>
+</head>
+
+<body>
+<section class="login">
+	<div class="titulo">用户登录</div>
+	<form name="login" method="post" enctype="application/x-www-form-urlencoded">
+    	<input type="text" name="username" required title="必须输入用户名或邮箱" placeholder="用户名或邮箱" data-icon="U">
+        <input type="password" name="password" required title="必须输入密码" placeholder="请输入密码" data-icon="x">
+        <div class="olvido">
+        	<div class="col"><a href="register.html" title="成为会员？">注  册</a></div>
+            <div class="col"><a href="#" title="找回密码">忘记密码？</a></div>
+        </div>
+        <a href="javascript:void(0);" class="enviar">登录</a>
+        <span id="qqLoginBtn"></span>
+<script type="text/javascript">
+    QC.Login({
+       btnId:"qqLoginBtn"    //插入按钮的节点id
+});
+</script>
+        <div class="error"></div>
+    </form>
+</section>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/user/login.js"></script>
+<script src="js/mapping.js"></script>
+<script src="js/user/login_page_check.js"></script>
+
+</script>
+</html>
